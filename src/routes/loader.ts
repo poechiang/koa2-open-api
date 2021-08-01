@@ -3,10 +3,10 @@ import path from 'path';
 
 const AppRootPath = 'src/app';
 
-const loadRouters = (basePath?: string): Octopus.RouteInfo[] => {
+const loadRouters = (basePath?: string): RouteInfo[] => {
     const files = fs.readdirSync(path.resolve(AppRootPath, basePath || ''));
 
-    const routeList: Octopus.RouteInfo[] = [];
+    const routeList: RouteInfo[] = [];
     files.forEach((file) => {
         const filePath = path.resolve(AppRootPath, basePath || '', file);
         const stat = fs.statSync(filePath);
@@ -22,9 +22,9 @@ const loadRouters = (basePath?: string): Octopus.RouteInfo[] => {
                             url,
                             method: ctrl.method || 'GET',
                             action,
-                        } as Octopus.RouteInfo;
+                        } as RouteInfo;
                     }
-                    return { url, method, action } as Octopus.RouteInfo;
+                    return { url, method, action } as RouteInfo;
                 })
             );
         }

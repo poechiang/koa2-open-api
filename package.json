@@ -21,6 +21,7 @@
     "@types/crypto-js": "^4.0.1",
     "chai": "^4.3.4",
     "crypto-js": "^4.0.0",
+    "date-fns": "^2.22.1",
     "dotenv": "^8.2.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.3.0",
