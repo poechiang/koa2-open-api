@@ -1,35 +1,42 @@
 //***************************************************************************
-// @Description  : Blog Article Model
+// @Description  : User Model
 // @Author       : Jeffery
-// @Date         : 2021-04-07 00:20:00
-// @FilePath     : /octopus/src/models/article.model.ts
+// @Date         : 2021-09-04 21:19:55
+// @FilePath     : /octopus/src/models/user.model.ts
 // @Linsence     : MIT
 // 一切伟大的思想和行动，都源于一个微不足道的开始
 //***************************************************************************
 import { model, Schema } from 'mongoose';
 
 export default model(
-    'articles',
+    'user',
     new Schema({
         id: {
             type: String,
         },
-        title: {
+        name: {
             type: String,
             required: true,
         },
-        catagory: {
+        passd: {
+            type: String,
+        },
+        gender: {
             type: String,
             default: '',
         },
-        tags: {
-            type: Array,
-            default: [],
+        birth: {
+            type: Date,
         },
-        content: {
+        nick: {
             type: String,
             default: '',
-            required: true,
+        },
+        avatar: {
+            type: Date,
+        },
+        signature: {
+            type: String,
         },
         createdAt: {
             type: Date,
@@ -38,15 +45,8 @@ export default model(
         modifyAt: {
             type: Date,
         },
-        author: {
-            type: String,
-        },
         state: {
             type: Number,
-            default: 0,
-        },
-        draft: {
-            type: Boolean,
             default: 0,
         },
         extra: { type: Object, default: null },

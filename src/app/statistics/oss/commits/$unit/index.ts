@@ -1,3 +1,11 @@
+//***************************************************************************
+// @Description  : 统计用户活跃度
+// @Author       : Jeffery
+// @Date         : 2021-08-29 23:52:26
+// @FilePath     : /octopus/src/app/statistics/oss/commits/$unit/index.ts
+// @Linsence     : MIT
+// 一切伟大的思想和行动，都源于一个微不足道的开始
+//***************************************************************************
 import { Context } from 'koa';
 import { map, random, toNumber } from 'lodash';
 import addStep from '../../../common/addStep';
@@ -21,7 +29,7 @@ export const GET = async (ctx: Context) => {
 
     const list = map(Array(count).fill(null), (item, index: number) => ({
         date: addStep(start, index, unit),
-        visits: random(3000, 4000),
+        visits: random(0, 10),
     }));
 
     ctx.json(list);
