@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////
+// 表态类型定义文件 *.d.ts
+// @Author: Jeff
+// @Created at: Mar. 22, 2021 04:10:38
+// @Modified at: Apr. 04, 2022 15:56:01
+// @Modified by: Jeff
+// @一切伟大的行动都始于一个微不足道的开始!
+///////////////////////////////////////////////////////////////////////
+declare module 'koa-less';
 declare type StatUnit =
     | 'second'
     | 'minute'
@@ -10,7 +19,8 @@ declare type StatUnit =
 declare interface RouteInfo {
     url: string;
     method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'HEAD' | 'OPTIONS' | 'DELETE';
-    action: Function;
+    action?: Function;
+    view?: any;
 }
 
 declare type OrderInfo =
