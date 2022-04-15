@@ -29,12 +29,13 @@
             "@svr/*": ["./src/service/*"]
         }
     },
-    "exclude": ["node_modules"],
+    "exclude": ["node_modules", "./src/public/docs"],
     "include": ["./src/**/*.ts"],
 
     "typedocOptions": {
         "entryPoints": ["./src/api/"],
         "entryPointStrategy": "Expand",
+        "pretty": true,
         "exclude": "**/__test__/*.ts",
         "out": "./src/public/docs"
     }
