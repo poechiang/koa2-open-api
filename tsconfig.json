@@ -30,5 +30,12 @@
         }
     },
     "exclude": ["node_modules"],
-    "include": ["./src/**/*.ts"]
+    "include": ["./src/**/*.ts"],
+
+    "typedocOptions": {
+        "entryPoints": ["./src/api/"],
+        "entryPointStrategy": "Expand",
+        "exclude": "**/__test__/*.ts",
+        "out": "./src/public/docs"
+    }
 }

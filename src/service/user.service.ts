@@ -41,10 +41,10 @@ export default class OssService {
             const newUser = new UserModel(data);
             newUser
                 .save()
-                .then((user) => {
+                .then((user: any) => {
                     resolve(user);
                 })
-                .catch((err) => {
+                .catch((err: Error) => {
                     reject(err);
                 });
         });
@@ -54,17 +54,17 @@ export default class OssService {
             const { _id, ...art } = data;
             art.modifyAt = new Date();
             UserModel.updateOne({ _id }, art)
-                .then((rlt) => {
+                .then((rlt: any) => {
                     resolve(rlt);
                 })
-                .catch((err) => {
+                .catch((err: Error) => {
                     reject(err);
                 });
         });
     };
     deleteUser = (id: string) => {
         return new Promise((resolve, reject) => {
-            UserModel.deleteOne({ _id: id }).then((args) => {
+            UserModel.deleteOne({ _id: id }).then((args: any) => {
                 resolve(args);
             });
         });

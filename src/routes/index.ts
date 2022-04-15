@@ -7,10 +7,11 @@
 // @一切伟大的行动都始于一个微不足道的开始!
 ///////////////////////////////////////////////////////////////////////
 
+import { Next } from 'koa';
 import KoaRouter from 'koa-router';
 import { lowerCase, map, toString } from 'lodash';
+import { Context } from 'vm';
 import apiLoader from './loaders/api.loader';
-import viewLoader from './loaders/view.loader';
 
 const router = new KoaRouter();
 
@@ -20,10 +21,9 @@ try {
     apiRoutes.forEach(({ url, method, action }) => {
         (router as any)[lowerCase(toString(method || 'get'))](url, action);
     });
-    const viewRoutes: Array<RouteInfo> = viewLoader.load();
-    console.debug(map(viewRoutes, (r) => `[VIEW] GET ${r.url}`));
-    viewRoutes.forEach(({ url, view }) => {
-        router.get(url, view);
+
+    router.get('/', async (ctx: Context, next: Next) => {
+        await ctx.render('../docs/index');
     });
 } catch (err) {
     console.error(err);
