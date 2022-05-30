@@ -1,0 +1,13 @@
+{
+    "name": "测试APIs",
+
+    "version": "1.0.0",
+
+    "description": "接口测试",
+
+    "title": "test APIs",
+
+    "url": "http://localhost:9999",
+
+    "sampleUrl": "http://localhost:9999"
+}

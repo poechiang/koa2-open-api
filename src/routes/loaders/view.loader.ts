@@ -1,12 +1,18 @@
-///////////////////////////////////////////////////////////////////////
-// 扫描文件结构生成 模板 router
-// @Author: Jeff
-// @Created at: Apr. 04, 2022 15:25:34
-// @Modified at: Apr. 04, 2022 15:25:35
-// @Modified by: Jeff
-// @一切伟大的行动都始于一个微不足道的开始!
-///////////////////////////////////////////////////////////////////////
-
+/**
+ * @Author: Jeff
+ * @CreatedAt: Apr. 04, 2022 15:25:34
+ * @ModifiedAt: Apr. 16, 2022 14:41:12
+ * @ModifiedBy: Jeff
+ * @一切伟大的行动都始于一个微不足道的开始!
+ */
+/**
+ *
+ * @Author: Jeff
+ * @Created at: Apr. 04, 2022 15:25:34
+ * @Modified at: Apr. 16, 2022 04:35:20
+ * @Modified by: Jeff
+ * @一切伟大的行动都始于一个微不足道的开始!
+ */
 import fs from 'fs';
 import { Next } from 'koa';
 import { replace } from 'lodash';

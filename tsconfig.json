@@ -29,14 +29,22 @@
             "@svr/*": ["./src/service/*"]
         }
     },
-    "exclude": ["node_modules", "./src/public/docs"],
+    "exclude": ["node_modules", "./src/views"],
     "include": ["./src/**/*.ts"],
 
     "typedocOptions": {
-        "entryPoints": ["./src/api/"],
+        "entryPoints": ["./src/api/", "./README.md"],
         "entryPointStrategy": "Expand",
+        "includeVersion": true,
         "pretty": true,
+        "excludeExternals": true,
+        "excludeTags": "apidefine",
+        "excludePrivate": true,
+        "excludeProtected": true,
+        "excludeInternal": true,
+        "hideGenerator": true,
         "exclude": "**/__test__/*.ts",
-        "out": "./src/public/docs"
+        "out": "./src/views/docs",
+        "sort": ["source-order"]
     }
 }

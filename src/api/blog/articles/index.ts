@@ -1,12 +1,12 @@
-///////////////////////////////////////////////////////////////////////
-//
-// @Author: Jeff
-// @Created at: Apr. 07, 2021 01:29:52
-// @Modified at: Apr. 16, 2022 00:36:58
-// @Modified by: Jeff
-// @一切伟大的行动都始于一个微不足道的开始!
-///////////////////////////////////////////////////////////////////////
-
+/**
+ * 文章列表
+ * @module
+ * @Author: Jeff
+ * @CreatedAt: Apr. 07, 2021 01:29:52
+ * @ModifiedAt: Apr. 16, 2022 05:01:36
+ * @ModifiedBy: Jeff
+ * @一切伟大的行动都始于一个微不足道的开始!
+ */
 import BlogService from '@svr/blog.service';
 import { Context } from 'koa';
 

@@ -1,11 +1,10 @@
-///////////////////////////////////////////////////////////////////////
-// 表态类型定义文件 *.d.ts
-// @Author: Jeff
-// @Created at: Mar. 22, 2021 04:10:38
-// @Modified at: Apr. 04, 2022 15:56:01
-// @Modified by: Jeff
-// @一切伟大的行动都始于一个微不足道的开始!
-///////////////////////////////////////////////////////////////////////
+/**
+ * @Author: Jeff
+ * @CreatedAt: Mar. 22, 2021 04:10:38
+ * @ModifiedAt: May. 31, 2022 06:24:11
+ * @ModifiedBy: Jeff
+ * @一切伟大的行动都始于一个微不足道的开始!
+ */
 declare module 'koa-less';
 declare type StatUnit =
     | 'second'
@@ -40,3 +39,9 @@ declare interface StatisticsParams {
     startTime?: Date | string | number | null;
     endTime?: Date | string | number | null;
 }
+
+interface IOrigin {
+    url: string;
+    origin: string;
+}
+type IOriginList = IOrigin[];

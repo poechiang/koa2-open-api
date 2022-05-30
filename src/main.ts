@@ -1,11 +1,17 @@
-///////////////////////////////////////////////////////////////////////
-// 工程入口文件
-// @Author: Jeff
-// @Created at: Mar. 21, 2021 02:49:57
-// @Modified at: Apr. 04, 2022 16:57:32
-// @Modified by: Jeff
-// @一切伟大的行动都始于一个微不足道的开始!
-///////////////////////////////////////////////////////////////////////
+/**
+ * @Author: Jeff
+ * @CreatedAt: Mar. 21, 2021 02:49:57
+ * @ModifiedAt: May. 29, 2022 03:31:46
+ * @ModifiedBy: Jeff
+ * @一切伟大的行动都始于一个微不足道的开始!
+ */
+/**
+ * @Author: Jeff
+ * @CreatedAt: Mar. 21, 2021 02:49:57
+ * @ModifiedAt: Apr. 16, 2022 14:40:14
+ * @ModifiedBy: Jeff
+ * @一切伟大的行动都始于一个微不足道的开始!
+ */
 
 import { error, info } from '@Lib/console';
 import Resp from '@Mid/Resp';
@@ -39,7 +45,21 @@ mongoose
 const app = new Koa();
 
 app.use(
-    _static(`${__dirname}/public/docs`, {
+    _static(`${__dirname}/public`, {
+        maxAge: 1000 * 60 * 60 * 24 * 365,
+        hidden: true,
+        gzip: true,
+    })
+);
+app.use(
+    _static(`${__dirname}/views/rest`, {
+        maxAge: 1000 * 60 * 60 * 24 * 365,
+        hidden: true,
+        gzip: true,
+    })
+);
+app.use(
+    _static(`${__dirname}/views/docs`, {
         maxAge: 1000 * 60 * 60 * 24 * 365,
         hidden: true,
         gzip: true,
@@ -51,7 +71,7 @@ app.use(cors(CORS));
 app.use(bodyParser());
 app.use(json());
 render(app, {
-    root: path.resolve(__dirname, 'public/docs'),
+    root: path.resolve(__dirname, 'views'),
     layout: false,
     viewExt: 'html',
     cache: false,

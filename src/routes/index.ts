@@ -22,8 +22,8 @@ try {
         (router as any)[lowerCase(toString(method || 'get'))](url, action);
     });
 
-    router.get('/', async (ctx: Context, next: Next) => {
-        await ctx.render('../docs/index');
+    router.get('/rest', async (ctx: Context, next: Next) => {
+        await ctx.render('./rest/index');
     });
 } catch (err) {
     console.error(err);
